@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="add-note-btn">
+    <a href="{{ url_for('addnote') }}">&plus;</a>
+</div>
+
+<div class="note-pad">
+{% for note in notes %}
+    <div class="sticky-pad">
+        <div class="title">
+            <h3>{{ note.title }}</h3>
+        </div>
+        <hr>
+        <div class="subtitle">
+            <h5>{{ note.subtitle }}</h5>
+        </div>
+        <div class="summary">
+            {{ note.summary }}
+        </div>
+        <div class="status">
+            <h5>{{ note.status }}</h5>
+        </div>
+    </div>
+{% endfor %}
+
+</div>
+{% endblock %}
